@@ -7,9 +7,10 @@ function App() {
 
   useEffect(() => {
     const fetchStudents = async () => {
-      const response = await fetch('http://localhost:3000/dummy/students');
+      const response = await fetch('http://localhost:3000/real/students');
       const data = await response.json();
       setStudents(data);
+      console.log(data);
     };
 
     fetchStudents();
@@ -22,7 +23,10 @@ function App() {
         <p>Here is a list of all students:</p>
         <div className="App-intro">
           {students ? students.map(student =>
-            <div key={crypto.randomUUID()}>{student.name} : {student.house}</div>
+            student && <div className='glassmorph-card'>
+              <img src={student.image} alt="Student image" className='student-img' />
+              <div key={crypto.randomUUID()}>{student.name} : {student.house}</div>
+            </div>
           ) : "Loading..."}
         </div>
       </header>

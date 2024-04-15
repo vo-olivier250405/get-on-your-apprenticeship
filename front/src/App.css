@@ -40,3 +40,35 @@
 .read-the-docs {
   color: #888;
 }
+
+
+.glassmorph-card {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid rgba(209, 213, 219, 0.15);
+  background: rgba(209, 213, 219, 0.1);
+  backdrop-filter: blur(4px);
+  transition-duration: 100ms;
+  transition-timing-function: ease-in;
+  width: 100%;
+}
+
+.glassmorph-card:hover{
+  background: rgba(209, 213, 219, 0.2);
+}
+
+.student-img{
+  width: 300px;
+}
+
+@media screen and (width < 768px) {
+  .glassmorph-card {
+    width: 30%;
+  }
+  .student-img{
+    width: 100px;
+    border-radius: 1rem;
+    border: white 1px solid;
+  }
+}
